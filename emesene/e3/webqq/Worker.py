@@ -166,7 +166,7 @@ class Worker(e3.Worker):
         from_uin = str(data['from_uin'])
 
         account = from_uin
-        body = data['content'][-1]
+        body = data['message']
         type_ = e3.Message.TYPE_MESSAGE
 
         if account in self.conversations:
