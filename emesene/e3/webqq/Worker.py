@@ -166,7 +166,7 @@ class Worker(e3.Worker):
         from_uin = str(data['from_uin'])
 
         account = from_uin
-        body = data['content'][-1]
+        body = data['message']
         type_ = e3.Message.TYPE_MESSAGE
 
         if account in self.conversations:
@@ -187,7 +187,7 @@ class Worker(e3.Worker):
         data = json.loads(message)
         group_code = str(data["group_code"])
         send_uin = str(data["send_uin"])
-        body = data['content'][-1]
+        body = data['message']
         display_name=send_uin
 
         for group in self.res_manager.group_contacts:
